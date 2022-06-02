@@ -1,0 +1,56 @@
+"""
+THIS SCRIPT IS THE ORIGINAL ONE, THE OTHER ONE WILL BE THE VERSION 2
+
+import time
+import random
+
+lessons = ['Math', 'Literature', 'Chemistry', 'Physics', 'Biology',
+           'History','Geography', 'German','Islam Religion',
+           'Islam Religion2', 'Health and Traffic Culture']
+
+chosenlesson = random.choice(lessons)
+period = random.randint(10, 40)
+
+if chosenlesson in ('Islam Religion2' or 'Islam Religion'):
+    period = random.randint(8,25)
+    print(chosenlesson, "," , period, "minutes")
+else:
+    print(chosenlesson, "," , period, "minutes")
+
+time.sleep(3.20)
+
+input("Press ENTER to exit.")
+"""
+
+import random
+
+lessons = ["History", "Biology,", "Math", "Literature", "Georaphy","German"]
+
+chosenLesson = random.choice(lessons)
+chosenLesson2 = random.choice(lessons)
+chosenLesson3 = random.choice(lessons)
+
+
+
+#random.choice will pick a random element
+period = random.randint(20, 40)
+period2 = random.randint(20, 40)
+period3 = random.randint(20, 40)
+
+#if (period + period2 + period3) > 80:
+#    print("The total amount of period is overload, try again.")
+#if (period + period2 + period3) < 80:
+#    print(chosenLesson, ',', period, 'minutes')
+#    print(chosenLesson2, ',', period2, 'minutes')
+#    print(chosenLesson3, ',', period3, 'minutes')
+
+#Weights are for probabilities.
+#k is for the amount of element we will pick up among the list.
+#if it's random.choice and not random.choices, weights and k won't work.
+
+pPeriods = range(25,40)
+
+for i in range(3):
+    chosenUpdatedLesson = random.choices(lessons, weights=(20,30,10,10,50,40), k=1)
+    periods = random.choices(pPeriods)
+    print(chosenUpdatedLesson[0], ',', periods, "minutes")
